@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>O- Landing Page</title>
+</head>
+<body>
+    
+    <!--HERO STARTS HERE-->
+    <div class="hero">
+
+        <div class="m-header">
+            <div class="header">
+                <p><a href="#" class="logo-text">JOECRE8IVE</a></p>
+        
+    
+                <ul class="links" id="link">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <img src="harm.png" alt="harm" class="harm" id="harm" onclick="show()">
+            <img src="harm.png" alt="harm2" class="harm harm2" id="harm2" onclick="show2()">
+        </div>
+
+        <div class="hero-M">
+            <div class="left-hero-M">
+                <h3 class="M-text">We Teach All You Need To Know</h3>
+                <p class="S-text">This is a css project in this awesome website, An awesome course that i am following online,
+                    i pray to get the best out of this course and be this web developer in the world</p>
+
+                <button class="hero-btn">Sign up</button>
+            </div>
+
+            <div class="right-hero-M">
+                <img src="img/prog.svg" alt="prog" class="prog">
+            </div>
+        </div>
+    </div>
+    <!--HERO ENDS HERE-->
+
+    <!--RANDOM INFO STARTS HERE-->
+    
+    <div class="rand-info">
+        <div class="m-rand">
+            <h2>Our Services</h2>
+            <div class="service">
+                <div class="m-card">
+
+                    <div class="card-in">
+                        <div class="card-img">
+                            <img src="img/graphic.jpeg" alt="graphic" class="img">
+                        </div>
+                        <div class="card-text">
+                            <h5>Graphic Design</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. labore eius!</p>
+                        </div>
+                    </div>
+
+                    <div class="card-in">
+                        <div class="card-img">
+                            <img src="img/web.jpg" alt="graphic" class="img">
+                        </div>
+                        <div class="card-text">
+                            <h5>Web Design</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. labore eius!</p>
+                        </div>
+                    </div>
+
+                    <div class="card-in">
+                        <div class="card-img">
+                            <img src="img/soft.jpg" alt="graphic" class="img">
+                        </div>
+                        <div class="card-text">
+                            <h5>Software Dev.</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. labore eius!</p>
+                        </div>
+                    </div>
+
+                    <div class="card-in">
+                        <div class="card-img">
+                            <img src="img/graphic.jpeg" alt="graphic" class="img">
+                        </div>
+                        <div class="card-text">
+                            <h5>Graphic Design</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. labore eius!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--RANDOM INFO ENDS HERE-->
+
+    <!--TESTIMONIAL STARTS HERE-->
+
+    <div class="m-test">
+
+        <div class="testi">
+            <p>Human greatness does not lie in wealth or 
+                power, but in character and goodness. People 
+                are just people, and all people have faults 
+                and shortcomings,but all of us are born with 
+                a basic goodness.
+            </p>
+            <h3>Joecre8ive</h3>
+        </div>
+
+    </div>
+
+    <!--TESTIMONIAL ENDS HERE-->
+
+     <!--CALL TO ACTION STARTS HERE-->
+
+    <div class="call-m">
+        <div class="call">
+            <div class="call-text">
+                <h2>Register Now!</h2>
+                <p>Sign up for our Services by clicking that button right over there</p>
+            </div>
+            <div class="call-btn">
+                <button class="call-b">Sign up</button>
+            </div>
+        </div>
+    </div>
+
+     <!--CALL TO ACTION ENDS HERE-->
+
+    <!--footer starts HERE-->
+
+    <div class="footer">
+        copyright &copy; Joecre8ive 2022
+    </div>
+
+    <!--footer ends HERE-->
+
+    <script>
+        var showLink = document.getElementById('link');
+        var harm = document.getElementById('harm');
+        var harm2 = document.getElementById('harm2');
+
+        const show = () => {
+            showLink.classList.add('link');
+            harm.classList.add('harm2');
+            harm2.classList.remove('harm2');
+        }
+
+        const show2 = () => {
+            showLink.classList.remove('link');
+            harm.classList.remove('harm2');
+            harm2.classList.add('harm2');
+        }
+
+        
+
+    </script>
+</body>
+</html>
