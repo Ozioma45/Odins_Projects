@@ -6,11 +6,12 @@ function getComputerChoice(){
       var computerChoice = arr[(Math.floor(Math.random() * arr.length))]
 
       return computerChoice
-}
+}   
 
-function game(){}
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
 
-function playRound(playerSelection, computerSelection, roundtime) {
     if(playerSelection == computerSelection){
         return "Its a draw"
     }else if (playerSelection=="Rock" && computerSelection=="Scissors"){
@@ -25,6 +26,30 @@ function playRound(playerSelection, computerSelection, roundtime) {
         return `You lose, ${computerSelection} wins`;
     }
   } 
+
+  function game() {
+    var rounds = 5;
+    var playerScore = 0;
+    var computerScore = 0;
+  
+    for (var i = 0; i < rounds; i++) {
+      const playerSelection = prompt("Player's Choice please");
+      const computerSelection = getComputerChoice();
+      console.log(playRound(playerSelection, computerSelection));
+  
+      if (playRound(playerSelection, computerSelection).includes("win")) {
+        playerScore++;
+      } else if (playRound(playerSelection, computerSelection).includes("lose")) {
+        computerScore++;
+      }
+    }
+  
+    console.log("Game over!");
+    console.log("Player score:", playerScore);
+    console.log("Computer score:", computerScore);
+  }
+  
+  game();
 
 
   const playerSelection = "Paper";
