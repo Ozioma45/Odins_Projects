@@ -9,17 +9,18 @@ function getComputerChoice(){
 }   
 
 function playRound(playerSelection, computerSelection) {
+
     playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase(); 
 
     if(playerSelection == computerSelection){
         return "Its a draw"
-    }else if (playerSelection=="Rock" && computerSelection=="Scissors"){
+    }else if (playerSelection=="rock" && computerSelection=="scissors"){
         return "You win! Rock beats Scissors"
-    }else if(playerSelection == "Paper" && computerSelection == "Rock"){
+    }else if(playerSelection == "paper" && computerSelection == "rock"){
         return "You win! Paper beats Rock"
     }else if(
-        playerSelection ="Scissors" && computerSelection == "Paper"
+        playerSelection =="scissors" && computerSelection == "paper"
     ){
         return "You win! Scissors beats Paper"
     }else{
@@ -27,7 +28,21 @@ function playRound(playerSelection, computerSelection) {
     }
   } 
 
-  function game() {
+
+  // Event listener function for button click
+  function handleClick(event) {
+    const playerSelection = event.target.textContent;
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+  }
+
+  // Add event listeners to the buttons
+  const buttons = document.getElementsByClassName("btn");
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', handleClick);
+  }
+
+ /*  function game() {
     var rounds = 5;
     var playerScore = 0;
     var computerScore = 0;
@@ -49,9 +64,7 @@ function playRound(playerSelection, computerSelection) {
     console.log("Computer score:", computerScore);
   }
   
-  game();
+  game(); */ 
 
 
-  const playerSelection = "Paper";
-  const computerSelection = getComputerChoice();
-  console.log(playRound(playerSelection, computerSelection));
+  
