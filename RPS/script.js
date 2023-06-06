@@ -1,70 +1,66 @@
-console.log('hello world')
 
-//for the computer choice
-const arr = ["Rock","Paper","Scissors"]
-function getComputerChoice(){
-      var computerChoice = arr[(Math.floor(Math.random() * arr.length))]
+    let playerScore = 0;
+    let computerScore = 0;
 
-      return computerChoice
-}   
-
-function playRound(playerSelection, computerSelection) {
-
-    playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase(); 
-
-    if(playerSelection == computerSelection){
-        return "Its a draw"
-    }else if (playerSelection=="rock" && computerSelection=="scissors"){
-        return "You win! Rock beats Scissors"
-    }else if(playerSelection == "paper" && computerSelection == "rock"){
-        return "You win! Paper beats Rock"
-    }else if(
-        playerSelection =="scissors" && computerSelection == "paper"
-    ){
-        return "You win! Scissors beats Paper"
-    }else{
-        return `You lose, ${computerSelection} wins`;
+    // Function to generate computer's choice
+    function getComputerChoice() {
+      const choices = ["Rock", "Paper", "Scissors"];
+      const randomIndex = Math.floor(Math.random() * choices.length);
+      return choices[randomIndex];
     }
-  } 
 
+    // Function to handle the game logic
+    function playRound(playerSelection, computerSelection) {
+      playerSelection = playerSelection.toLowerCase();
+      computerSelection = computerSelection.toLowerCase();
 
-  // Event listener function for button click
-  function handleClick(event) {
-    const playerSelection = event.target.textContent;
-    const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
-  }
-
-  // Add event listeners to the buttons
-  const buttons = document.getElementsByClassName("btn");
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', handleClick);
-  }
-
- /*  function game() {
-    var rounds = 5;
-    var playerScore = 0;
-    var computerScore = 0;
-  
-    for (var i = 0; i < rounds; i++) {
-      const playerSelection = prompt("Player's Choice please");
-      const computerSelection = getComputerChoice();
-      console.log(playRound(playerSelection, computerSelection));
-  
-      if (playRound(playerSelection, computerSelection).includes("win")) {
+      if (playerSelection === computerSelection) {
+        return "It's a draw!";
+      } else if (
+        (playerSelection === "rock" && computerSelection === "scissors") ||
+        (playerSelection === "paper" && computerSelection === "rock") ||
+        (playerSelection === "scissors" && computerSelection === "paper")
+      ) {
         playerScore++;
-      } else if (playRound(playerSelection, computerSelection).includes("lose")) {
+        return `You win! ${playerSelection} beats ${computerSelection}.`;
+      } else {
         computerScore++;
+        return `You lose! ${computerSelection} beats ${playerSelection}.`;
       }
     }
-  
-    console.log("Game over!");
-    console.log("Player score:", playerScore);
-    console.log("Computer score:", computerScore);
-  }
-  
-  game(); */ 
 
+    // Function to display the score and check for a winner
+    function updateScoreDisplay() {
+      const scoreDisplay = document.getElementById("score-display");
+      scoreDisplay.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
 
-  
+      if (playerScore === 5) {
+        scoreDisplay.textContent += " Player wins!";
+        disableButtons();
+      } else if (computerScore === 5) {
+        scoreDisplay.textContent += " Computer wins!";
+        disableButtons();
+      }
+    }
+
+    // Event listener function for button click
+    function handleClick(event) {
+      const playerSelection = event.target.textContent;
+      const computerSelection = getComputerChoice();
+      const result = playRound(playerSelection, computerSelection);
+      console.log(result);
+      updateScoreDisplay();
+    }
+
+    // Add event listeners to the buttons
+    const buttons = document.getElementsByClassName("btn");
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', handleClick);
+    }
+
+    // Function to disable the buttons
+    function disableButtons() {
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+      }
+    }
