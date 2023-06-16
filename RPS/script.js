@@ -9,25 +9,27 @@
       return choices[randomIndex];
     }
 
-    // Function to handle the game logic
-    function playRound(playerSelection, computerSelection) {
-      const idan = document.getElementById("idan");
-      playerSelection = playerSelection.toLowerCase();
-      computerSelection = computerSelection.toLowerCase();
-      if (playerSelection === computerSelection) {
-        idan.textContent = "It's a draw!";
-      } else if (
-        (playerSelection === "rock" && computerSelection === "scissors") ||
-        (playerSelection === "paper" && computerSelection === "rock") ||
-        (playerSelection === "scissors" && computerSelection === "paper")
-      ) {
-        playerScore++;
-        idan.textContent = `You win! ${playerSelection} beats ${computerSelection}.`;
-      } else {
-        computerScore++;
-        idan.textContent = `You lose! ${computerSelection} beats ${playerSelection}.`;
-      }
-    }
+   // Function to handle the game logic
+function playRound(playerSelection, computerSelection) {
+  const idan = document.getElementById("idan");
+  playerSelection = playerSelection.toLowerCase();
+  computerSelection = computerSelection.toLowerCase();
+
+  if (playerSelection === computerSelection) {
+    idan.textContent = "It's a draw!";
+  } else if (
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper")
+  ) {
+    playerScore++;
+    idan.textContent = `You win! ${playerSelection} beats ${computerSelection}.`;
+  } else {
+    computerScore++;
+    idan.textContent = `You lose! ${computerSelection} beats ${playerSelection}.`;
+  }
+  updateScoreDisplay();
+}
 
     // Function to display the score and check for a winner
     function updateScoreDisplay() {
@@ -48,19 +50,17 @@
     }
 
     // Event listener function for button click
-    function handleClick(event) {
-      const playerSelection = event.target.textContent;
-      const computerSelection = getComputerChoice();
-      const result = playRound(playerSelection, computerSelection);
-      console.log(result);
-      updateScoreDisplay();
-    }
+function handleClick(event) {
+  const playerSelection = event.target.id;
+  const computerSelection = getComputerChoice();
+  playRound(playerSelection, computerSelection);
+}
 
-    // Add event listeners to the buttons
-    const buttons = document.getElementsByClassName("btn");
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener('click', handleClick);
-    }
+// Select all the buttons and add the event listener
+const buttons = document.querySelectorAll(".btn");
+buttons.forEach((button) => {
+  button.addEventListener("click", handleClick);
+});
 
     // Function to disable the buttons
     function disableButtons() {

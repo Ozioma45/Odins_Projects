@@ -10,3 +10,16 @@
     border: none;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.267);
 }
+
+.btn{
+    border: none;
+    background:none;
+}
+
+.button{
+    width: 5rem;
+}
+
+.m-button{
+    gap: 5rem;
+}
