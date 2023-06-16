@@ -11,34 +11,38 @@
 
     // Function to handle the game logic
     function playRound(playerSelection, computerSelection) {
+      const idan = document.getElementById("idan");
       playerSelection = playerSelection.toLowerCase();
       computerSelection = computerSelection.toLowerCase();
-
       if (playerSelection === computerSelection) {
-        return "It's a draw!";
+        idan.textContent = "It's a draw!";
       } else if (
         (playerSelection === "rock" && computerSelection === "scissors") ||
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "scissors" && computerSelection === "paper")
       ) {
         playerScore++;
-        return `You win! ${playerSelection} beats ${computerSelection}.`;
+        idan.textContent = `You win! ${playerSelection} beats ${computerSelection}.`;
       } else {
         computerScore++;
-        return `You lose! ${computerSelection} beats ${playerSelection}.`;
+        idan.textContent = `You lose! ${computerSelection} beats ${playerSelection}.`;
       }
     }
 
     // Function to display the score and check for a winner
     function updateScoreDisplay() {
       const scoreDisplay = document.getElementById("score-display");
-      scoreDisplay.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
+
+      const player = document.getElementById("player");
+      const computer = document.getElementById("computer");
+      player.textContent=`Player: ${playerScore}`;
+      computer.textContent = `Computer: ${computerScore}`;
 
       if (playerScore === 5) {
-        scoreDisplay.textContent += " Player wins!";
+        scoreDisplay.textContent = " Player wins!";
         disableButtons();
       } else if (computerScore === 5) {
-        scoreDisplay.textContent += " Computer wins!";
+        scoreDisplay.textContent = " Computer wins!";
         disableButtons();
       }
     }
@@ -64,3 +68,9 @@
         buttons[i].disabled = true;
       }
     }
+
+    function restartPage() {
+      location.reload();
+    }
+
+    choose.textContent = `${playerSelection}`
