@@ -44,10 +44,12 @@ function playRound(playerSelection, computerSelection) {
         scoreDisplay.textContent = " Player wins!";
         disableButtons();
         openpop();
+        sGood();
       } else if (computerScore === 5) {
         scoreDisplay.textContent = " Computer wins!";
         disableButtons();
         openpop();
+        sBad();
       }
     }
 
@@ -82,6 +84,14 @@ buttons.forEach((button) => {
       pop_d.classList.add("open_popup");
       }
   
-    /*   function closepop(){
-        pop_d.classList.remove("open_popup");
-      } */
+   //tick choice
+   let good =document.getElementById("good");
+   let bad =document.getElementById("bad");
+
+   function sGood(){
+    bad.classList.add("tickv")
+   }
+
+   function sBad(){
+    good.classList.add("tickv")
+   }

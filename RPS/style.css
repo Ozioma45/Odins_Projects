@@ -66,6 +66,10 @@
     margin: 30px 0 10px;
 }
 
+.tickv{
+    display: none;
+}
+
 .pop_div button{
     width: 100%;
     margin-top: 50px;
