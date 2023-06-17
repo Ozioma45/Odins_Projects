@@ -43,9 +43,11 @@ function playRound(playerSelection, computerSelection) {
       if (playerScore === 5) {
         scoreDisplay.textContent = " Player wins!";
         disableButtons();
+        openpop();
       } else if (computerScore === 5) {
         scoreDisplay.textContent = " Computer wins!";
         disableButtons();
+        openpop();
       }
     }
 
@@ -73,4 +75,13 @@ buttons.forEach((button) => {
       location.reload();
     }
 
-    choose.textContent = `${playerSelection}`
+      //for pop up
+      let pop_d = document.getElementById("pop_d");
+
+      function openpop(){
+      pop_d.classList.add("open_popup");
+      }
+  
+    /*   function closepop(){
+        pop_d.classList.remove("open_popup");
+      } */
