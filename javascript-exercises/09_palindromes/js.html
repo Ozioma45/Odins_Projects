@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        const palindromes = function (word) {
+            let wordR= word.split(" ").reverse().join('');
+
+            if (word == wordR){
+                return "true"
+            }else {
+                return "false"
+            }
+        };
+
+        const word = "i am a boy";
+
+        console.log(palindromes(word))
+    </script>
+</body>
+</html>
