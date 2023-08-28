@@ -1,0 +1,63 @@
+@font-face {
+    font-family: my-cool-font;
+    src: url(Norse-Bold.otf);
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+CSS rules to specify families
+
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Work Sans', sans-serif; */
+
+
+main{
+    background-color:rgb(48, 48, 48);
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-cont{
+    width: 80%;
+    height: 100vh;
+
+}
+
+.left{
+    background-image: url(img/Odin.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 0;
+}
+
+.left > .left-text {
+    font-family: my-cool-font, sans-serif;
+    color: #f1f1f1;
+    font-size: 3rem;
+    background-color: #000000a4;
+    width: 100%;
+    margin-top: 7rem;
+    padding: 0.5rem;
+}
+
+.odin-logo{
+    width: 3rem;
+}
+
+.form-section{
+    background-color: black;
+    height: 100vh;
+    padding: 0;
+}
+
+.header{
+    width: 80%;
+}
+
+.p-one{
+    font-weight: 500;
+}
+
+.p-two{
+    font-weight: 500;
+}
