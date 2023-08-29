@@ -12,23 +12,60 @@
     <main class="main">
         <div class="main-cont container">
             <div class="row d-flex">
-                <div class="col-sm-4 left bg-primary d-none d-sm-block">
+                <div class="col-sm-4 left bg-primary d-none d-md-block">
                     <div class="left-text d-flex justify-content-center">
                         <img src="img/odin-lined.png" alt="odin_logo" class="img-fluid odin-logo">
                         ODIN
                     </div>
                 </div>
                 <div class="col-sm-8 form-section bg-secondary py-5">
-                    <div class="header py-5 px-5 text-white">
+                    <div class="header pt-5 px-5 text-center text-md-start">
                         <p class="p-one">This is not a real online service! You know you need something like this 
                             in your life to help you realize your deepest dreams. Sign up <em>now</em> to get started.</p>
-                            <br>
                         <p class="p-two">You <em>know</em> you want to.</p>
                     </div>
-                    <div class="main-form">
-                        <p>
+                    <div class="main-form px-5 py-3">
+                        <p>Let's do this!</p>
+
+                        <form action="post" class="sign-up d-flex row">
+                            <div class="sign-up-input col-md-5">
+                                <label for="first-name" data-help="¿Are you 11 from Stranger Things?">First Name</label>
+                                <input type="text"  id="first-name" name="first-name" value=""  size="30" maxlength="245" required>
+                            </div>
+
+                            <div class="sign-up-input col-md-5 py-3 py-md-0">
+                                <label>Last Name</label>
+                                <input type="text"  id="Lname" name="Lname" value="" size="30" maxlength="245" required>
+                            </div>
+
+                            <div class="sign-up-input col-md-5 py-md-4">
+                                <label>Email</label>
+                                <input type="email"  id="email" name="email" value=""  size="30" maxlength="245" required>
+                            </div>
+
+                            <div class="sign-up-input col-md-5 py-md-4 py-3">
+                                <label>Number</label>
+                                <input type="number"  id="number" name="number" value="" size="30" maxlength="245" required>
+                            </div>
+
+                            <div class="sign-up-input col-md-5">
+                                <label>Password</label>
+                                <input type="password"  id="password" name="password" value=""  size="30" maxlength="245" required>
+                            </div>
                             
-                        </p>
+                            <div class="sign-up-input col-md-5 py-3 py-md-0">
+                                <label for="confirm_password">Confirm Password</label>
+                                <input type="password" name="confirm_password" value="" size="30" maxlength="245" required>
+                            </div>
+                            
+                            <div class="form-submit mt-5">
+                                <button type="submit" class="p-1">Create Account</button>
+                            </div>
+
+                            <div class="account py-2">
+                                <p>Already have an account? <a href="#">Log in</a></p>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -16,7 +16,7 @@ main{
 }
 
 .main-cont{
-    width: 80%;
+    width: 70%;
     height: 100vh;
 
 }
@@ -44,20 +44,73 @@ main{
     width: 3rem;
 }
 
+
+/*MAIN-FORM*/
+
+
 .form-section{
-    background-color: black;
     height: 100vh;
     padding: 0;
 }
 
+
+
 .header{
-    width: 80%;
+    width: 90%;
+    font-family: 'Poppins', sans-serif;
+    color: #f1f1f1;
+    font-size: 1rem;
 }
 
-.p-one{
+.main-form{
+    font-weight: 600;
+    color: #f1f1f1;
+    background-color:rgb(138, 139, 139);
+}
+
+.sign-up{
+    display: flex;
+}
+
+.sign-up-input{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-size: 0.8rem;
+    color: rgb(235, 235, 235);
+}
+
+input{
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+}
+
+.form-submit button{
+    border: 0;
+    border-radius: 5px;
+    background-color: rgb(167, 113, 21);
+    color: #f1f1f1;
     font-weight: 500;
 }
 
-.p-two{
+.account{
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.account a{
+    text-decoration: none;
+    color: rgb(250, 208, 135);
     font-weight: 500;
 }
+
+    input:focus{
+        border: rgb(167, 113, 21) 1px solid;
+    }
+
+/* .invalid{
+    border: 1px solid red;
+}  */
