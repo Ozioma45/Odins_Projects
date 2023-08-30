@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+    font-family: my-cool-font;
+    src: url(Norse-Bold.otf);
+  }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        main{
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.932), rgba(0, 0, 0, 0.116)) ,url(img/odin2.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: my-cool-font;
+        }
+
+        main h1{
+            color: white;
+            font-size: 5rem;
+            text-shadow: 5px 5px 8px black;
+        }
+
+        p{
+            color: rgb(187, 187, 187);
+            font-size: 1.5rem;
+        }
+
+        button{
+            margin-top: 15px;
+            padding: 5px 10px;
+            background-color: rgb(167, 113, 21);
+            border: none;
+            color: #f1f1f1;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>WELCOME ON-BOARD</h1>
+        <p>You did a great Job</p>
+
+        <button onclick="reload()">Continue</button>
+    </main>
+
+    <script>
+        function reload(){
+            location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
