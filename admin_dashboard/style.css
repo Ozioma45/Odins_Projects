@@ -8,6 +8,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/*Header*/
 .header{
     grid-area: header; 
     display: inline-grid;
@@ -106,11 +107,60 @@
     }
 
 
+
+    /*SIDEBAR*/
+
 .sidebar{
-    background-color: blue;
+    background-color: #6f110f;
     grid-area: sidebar;
+    padding: 1rem;
 }
 
+    .dashboard-title{
+        display: flex;
+        align-items: center;
+    }
+
+        .dashboard{
+            color: #f1f1f1;
+            font-size: 2.5rem;
+            margin-right: 1rem ;
+        }
+
+        .dashboardT{
+            color: #f1f1f1;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+
+        .sidebar-nav{
+            margin-top: 3rem;
+        }
+
+            .sidebar ul{
+                list-style: none;
+            }
+                .sidebar-nav li{
+                    margin-bottom: 1rem;
+                }
+
+                .sidebar-nav li a{
+                    text-decoration: none;
+                    color: #f1f1f1;
+                    display: flex;
+                    align-items: center;
+                    font-weight: 500;
+                }
+
+                .sidebar-nav  .nav-icon{
+                    font-size: 1.3rem;
+                    margin-right: 1rem;
+                }
+
+            .nav2{
+                margin-top: 5rem;
+            }
 .nav{
     background-color: blueviolet;
     grid-area: nav;
