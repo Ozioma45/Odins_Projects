@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header{
+    grid-area: header; 
+    display: inline-grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows:1fr 2fr ;
+    padding: 5px;
+    justify-content: stretch;
+    height: 12rem;
+}
+
+    .top-left,.top-right{
+        margin: 1rem;
+        display: flex;
+        align-items: center;
+    } 
+
+        .bi-search{
+            font-size: 1.3rem;
+            margin-right: 1rem;
+        }
+
+        .bi-search:hover{
+            cursor: pointer;
+        }
+
+        .search-input{
+            width: 90%;
+            height: 2rem;
+            background-color: rgb(223, 223, 223);
+            border: none;
+            border-radius: 15px;
+        }
+
+   .top-right{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 1rem;
+   }
+
+        .bi-bell-fill{
+            font-size: 1.3rem;
+            margin-right: 2.5rem;
+        }
+
+        .top-right .admin-top-info{
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 1rem;
+        }
+
+            .admin-top-info img{
+                width: 2.5rem;
+
+            }
+
+            .admin-top-info .name{
+                color: rgb(54, 54, 54);
+            }
+
+    .header-main-left{
+        margin: 1rem;
+        display: flex;
+        align-items: center;
+    } 
+        
+        .header-main-left img{
+            width: 5rem;
+            margin-right: 1.5rem;
+        }
+
+        .header-main-left .text{
+            color: rgb(54, 54, 54);
+        }
+
+            .header-main-left .text .greetings{
+                font-weight: 700;
+            }
+
+    .header-main-right{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .header-main-right button{
+        width: 6rem;
+        height: 2.5rem;
+        border: none;
+        background-color: #6f110f;
+        color: #f1f1f1;
+        font-weight: 500;
+        border-radius: 15px;
+        font-size: 15px;
+    }
+
+
+.sidebar{
+    background-color: blue;
+    grid-area: sidebar;
+}
+
+.nav{
+    background-color: blueviolet;
+    grid-area: nav;
+}
+
+.projects{
+    background-color: brown;
+    grid-area: projects;
+}
+
+.news-side{
+    background-color: aquamarine;
+    grid-area: news-side;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas: 
+        "sidebar header header"
+        "sidebar nav nav"
+        "sidebar projects news-side"
+    ;
+}
