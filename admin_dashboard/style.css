@@ -188,7 +188,8 @@ body{
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     background-color: rgb(223, 223, 223);
-    padding: 0 30px;
+    padding: 0 20px;
+    
 }
 
     .projects .card{
@@ -196,6 +197,7 @@ body{
         padding: 20px;
         border-left: #6f110f 8px solid;
         border-radius: 15px;
+        box-shadow: 3px 5px 7px rgb(206, 206, 206);
     }
 
         .projects .card .card-title{
@@ -216,9 +218,53 @@ body{
         }
 
 .news-side{
-    background-color: aquamarine;
     grid-area: news-side;
+    font-size: 12px;
 }
+
+    .news-side .main-news-cont{
+        background-color: #ffffff;
+        padding: 1rem;
+        margin-right: 2rem;
+        border-radius: 10px;
+        box-shadow: 3px 5px 7px rgb(206, 206, 206);
+    }
+
+        .main-news-cont .newsC{
+            margin: 1rem 0;
+        }
+
+           .news-side .main-news-cont .title{
+                font-weight: 600;
+            }
+
+            .news-side .main-news-cont p{
+                color: rgb(131, 131, 131);
+                font-weight: 500;
+            }
+        
+    .news-side .bottom{
+        margin-top: 3rem;
+    }
+
+        .news-side .bottom> p{
+            font-weight: 600;
+            padding: 10px 0;
+            font-size: 15px;
+        }
+
+        .news-side .newsC .newsC-img{
+            width: 2.5rem;
+            margin-right: 1rem;
+        }
+
+        .bottom .main-news-cont .newsC{
+            display: flex;
+        }
+
+        .bottom .main-news-cont .newsC .title{
+            color: #000;
+        }
 
 main{
     background-color: rgb(223, 223, 223);
