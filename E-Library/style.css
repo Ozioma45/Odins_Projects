@@ -85,6 +85,28 @@ form {
   }
   
 
+  /*Middle Section*/
+  .wlc-message{
+    background-color: #F0F0F0;
+    box-shadow: 10px 4px 4px rgba(0, 0, 0, 0.219);
+  }
+
+  .img-sec{
+  }
+
+  .userImg{
+    width: 13rem;
+  }
+
+  .wlc-text > h4{
+    color: #474747;
+    font-weight: 700;
+  }
+
+  .wlc-text > p{
+    color: #939393;
+    font-weight: 600;
+  }
 
 
   /*FOOTER*/
@@ -93,4 +115,21 @@ form {
     background-color: #9A231D;
     font-weight: 500;
     color: #ffffff;
+  }
+
+  @media screen and (max-width: 800px) {
+    /*Middle Section*/
+  .userImg{
+    width: 5rem;
+  }
+
+  .wlc-text > h4,p{
+    color: #474747;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .wlc-text > p{
+    font-size: 0.9rem;
+  }
   }
