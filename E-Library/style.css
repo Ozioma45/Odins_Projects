@@ -116,30 +116,6 @@ form {
     border-radius: 14px;
   }
 
-
-  /*Books 1*/ 
-  .btn-card{
-    background-color: #9A231D;
-    color: white;
-  }
-
-  .card{
-    background-color: #D9D9D9;
-    border: none;
-  }
-  
-  .item{
-    margin-right: 5rem;
-  }
-  /*FOOTER*/
-  .footer{
-    width: 100%;
-    background-color: #9A231D;
-    font-weight: 500;
-    color: #ffffff;
-  }
-
-
   /*Book 2*/
   
 .slide-container{
@@ -159,19 +135,19 @@ form {
   background-color: #fff;
 }
 
-.image-content,
+
 .card-content{
   padding: 10px 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 14px;
+  
 }
 
 .image-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   row-gap: 5px;
   position: relative;
-  padding: 25px 0;
+  /* padding: 25px 0; */
 }
 
 .overlay{
@@ -202,19 +178,15 @@ form {
 
 .card-image{
   position: relative;
-  width: 150px;
+  width: 90%;
   height: 150px;
-  border-radius: 50%;
-  background-color: #fff;
   padding: 3px;
 }
 
-.card-image .card-img{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid  #aa2e28;
+.card-image .card-title{
+  font-weight: 700;
+  font-size: 2rem;
+  color: #fff;
 }
 
 .name{
@@ -229,7 +201,7 @@ form {
   text-align: center;
 }
 
-.button{
+ .button{
   border: none;
   color: #fff;
   font-size: 16px;
@@ -245,7 +217,31 @@ form {
   background: #265Df2;
 }
 
+.btn-conts{
+  width: 100%;
+}
 
+
+.person p{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #616161;
+  margin: 1rem 0;
+}
+
+#author,#pages{
+  color: #000000;
+  font-weight: 700;
+}
+
+
+  /*FOOTER*/
+  .footer{
+    width: 100%;
+    background-color: #9A231D;
+    font-weight: 500;
+    color: #ffffff;
+  }
 
 
 

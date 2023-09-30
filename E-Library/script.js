@@ -24,3 +24,22 @@ var swiper = new Swiper(".slide-content", {
       clickable: true,
     },
   });
+
+  //duplicating the div
+  
+  function change(){
+    //Getting the div to be cloned
+    const target = document.getElementById("main-card");
+
+    /*creates a new element (copyElement) that is an exact replica of the target element, including 
+    all of its child elements and their contents. It effectively duplicates the entire structure and content within */
+    const copyElement = target.cloneNode(true);
+
+    // Access the paragraph element within the cloned div
+    const paragraphInClone = copyElement.querySelector("p");
+
+// Update the text content of the paragraph
+  paragraphInClone.textContent = "New text for the paragraph";
+
+    document.getElementById("wrap").appendChild(copyElement);
+  }

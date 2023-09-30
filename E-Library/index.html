@@ -85,63 +85,39 @@
 
         <!--ADD BUTTON-->
         <div class="container d-flex justify-content-center addBtn mt-4">
-            <button class="btn px-4 py-2">ADD BOOK</button>
+            <button class="btn px-4 py-2" onclick="change()" >ADD BOOK</button>
         </div>
 
         <!--Book 2-->
         <div class="slide-container swiper">
           <div class="slide-content">
-              <div class="card-wrapper swiper-wrapper">
-                  <div class="card swiper-slide">
+              <div class="card-wrapper swiper-wrapper" id="wrap">
+                  <div class="card swiper-slide" id="main-card">
                       <div class="image-content">
                           <span class="overlay"></span>
       
-                          <div class="card-image">
-                              <img src="img/user.png" alt="profile icon" class="card-img">
+                          <div class="card-image d-flex justify-content-center align-items-center">
+                              <div class="card-title">Billionaire Next Door</div>
                           </div>
                       </div>
       
                       <div class="card-content">
-                              <h2 class="name">David Dell</h2>
-                              <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. At consequuntur eveniet repudiandae rerum? Ea, reprehenderit? Harum eius ex vitae dolorem!</p>
-                      
-                              <button class="button">View More</button>
-                      
-                          </div>
-                  </div>
-                  <div class="card swiper-slide">
-                      <div class="image-content">
-                          <span class="overlay"></span>
-      
-                          <div class="card-image">
-                              <img src="img/user.png" alt="profile icon" class="card-img">
-                          </div>
+                             <div class="row">
+                                <div class="col-5 person">
+                                    <p>Author:</p>
+                                    <p>Pages:</p>
+                                </div>
+                                <div class="col-7 person">
+                                    <p id="author">Bob Proctor</p>
+                                    <p id="pages">456</p>
+                                </div>
+                             </div>
+
+                             <div class="btn-conts d-flex justify-content-center">
+                                <button class="read-btn button">Read</button>
+                                <button class="del-btn button">Delete</button>
+                             </div>
                       </div>
-      
-                      <div class="card-content">
-                              <h2 class="name">David Dell</h2>
-                              <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. At consequuntur eveniet repudiandae rerum? Ea, reprehenderit? Harum eius ex vitae dolorem!</p>
-                      
-                              <button class="button">View More</button>
-                      
-                          </div>
-                  </div>
-                  <div class="card swiper-slide">
-                      <div class="image-content">
-                          <span class="overlay"></span>
-      
-                          <div class="card-image">
-                              <img src="img/user.png" alt="profile icon" class="card-img">
-                          </div>
-                      </div>
-      
-                      <div class="card-content">
-                              <h2 class="name">David Dell</h2>
-                              <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. At consequuntur eveniet repudiandae rerum? Ea, reprehenderit? Harum eius ex vitae dolorem!</p>
-                      
-                              <button class="button">View More</button>
-                      
-                          </div>
                   </div>
                   
               </div>
