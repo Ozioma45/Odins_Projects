@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // Constructor function for creating book objects
+function Book(title, author, pages) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+}
+
+// Array to store book objects
+const library = [];
+
+// Function to add a new book to the library
+function addBookToLibrary() {
+  // Prompt the user for book information
+  const title = prompt('Enter the book title:');
+  const author = prompt('Enter the author:');
+  const pages = parseInt(prompt('Enter the number of pages:'));
+
+  // Create a new book object
+  const newBook = new Book(title, author, pages);
+
+  // Add the new book to the library array
+  library.push(newBook);
+
+  // Optionally, you can display the updated library
+  displayLibrary();
+}
+
+addBookToLibrary();
+
+// Function to display the library
+function displayLibrary() {
+  // Clear the existing content (if any)
+  const libraryDisplay = document.getElementById('libraryDisplay');
+  libraryDisplay.innerHTML = '';
+
+  // Loop through the library array and display each book
+  for (const book of library) {
+    const bookInfo = document.createElement('div');
+    bookInfo.textContent = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pages}`;
+    libraryDisplay.appendChild(bookInfo);
+  }
+}
+
+// Example usage: Add a book to the library when a button is clicked
+const addBookButton = document.getElementById('addBookButton');
+addBookButton.addEventListener('click', addBookToLibrary);
+
+
+    </script>
+</body>
+</html>

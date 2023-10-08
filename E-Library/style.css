@@ -229,7 +229,7 @@ form {
   margin: 1rem 0;
 }
 
-#author,#pages{
+.person .Bvalues{
   color: #000000;
   font-weight: 700;
 }
