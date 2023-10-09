@@ -1,7 +1,18 @@
 const addBtn = document.getElementById('addBtn');
+const dialog = document.querySelector("dialog");
+const closeButton = document.querySelector(".close-btn");
 
 
- addBtn.addEventListener('click',addBookToLibrary);
+
+//to show the dialog 
+addBtn.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+//to close the dialog
+closeButton.addEventListener("click", () => {
+dialog.close();
+});
 
  const myLibrary = [];
 
@@ -57,6 +68,7 @@ const displayNewBook = (newBook) =>{
   document.getElementById("wrap").appendChild(copyElement);
  }
 
+
  var swiper = new swiper(".slide-content", {
   slidesPerView: 1,
   centeredSlides: false,
@@ -83,3 +95,5 @@ const displayNewBook = (newBook) =>{
     clickable: true,
   },
 });
+
+
