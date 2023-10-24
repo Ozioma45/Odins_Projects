@@ -27,13 +27,30 @@ function resetPage() {
 }
 
 
-const displayNewBook = (newBook) =>{
+const displayNewBook = (newBook, index) =>{
   //Getting the div to be cloned
   const target = document.getElementById("main-card");
 
   //creates a new element (copyElement) that is an exact replica of the target element, including 
   //all of its child elements and their contents. It effectively duplicates the entire structure and content within 
  const copyElement = target.cloneNode(true);
+
+ // Access the "Delete" button within the cloned div
+ const deleteButton = copyElement.querySelector(".delete-button");
+
+ // Add an event listener to the "Delete" button
+ deleteButton.addEventListener("click", () => {
+   // Remove the corresponding cloned div
+   copyElement.remove();
+
+   // Remove the book from the library and update the display
+   myLibrary.splice(index, 1);
+
+     // Store the updated library array in localStorage
+      localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
+
+      reloadPage(); // Call the function to reload the page
+ });
 
   // Access the elements and changing their values
  const bTitle = copyElement.querySelector("#bTitle");
