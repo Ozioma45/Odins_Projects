@@ -35,11 +35,24 @@ const displayNewBook = (newBook, index) =>{
   //all of its child elements and their contents. It effectively duplicates the entire structure and content within 
  const copyElement = target.cloneNode(true);
 
- 
- copyElement.classList.remove("hide")
+
+ copyElement.classList.remove("hide")//to make the newly created element visible
+
+ const readBtn = copyElement.querySelector(".read-btn")
+ const nReadBtn = copyElement.querySelector(".nRead-btn")
+
+ readBtn.addEventListener("click", () => {
+  readBtn.classList.add("hide")
+  nReadBtn.classList.remove("hide")
+ })
+
+ nReadBtn.addEventListener("click", () => {
+  readBtn.classList.remove("hide")
+  nReadBtn.classList.add("hide")
+ })
 
  // Access the "Delete" button within the cloned div
- const deleteButton = copyElement.querySelector(".delete-button");
+ const deleteButton = copyElement.querySelector(".del-btn");
 
  // Add an event listener to the "Delete" button
  deleteButton.addEventListener("click", () => {
