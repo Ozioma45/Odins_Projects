@@ -1,6 +1,8 @@
+//HANDLES THE GENERAL WORKFLOW
+
 const addBtn = document.getElementById('addBtn');
 
- const myLibrary = [];
+ let myLibrary = [];
 
  function Book(title, author, pages)  {
   this.title = title;
@@ -8,48 +10,21 @@ const addBtn = document.getElementById('addBtn');
    this.pages = pages;
 }
 
+// Add an event listener to the "Reset" button
+document.getElementById("resetButton").addEventListener("click", function () {
+  // Remove the "myLibrary" item from local storage
+  localStorage.removeItem("myLibrary");
 
-//get reference to the element and dialog
-const form = document.getElementById('myform')
-const dialog = document.querySelector("dialog");
-const showButton = document.querySelector("#show-login");
-const closeButton = document.querySelector(".close-btn");
-const subBtn = document.getElementById('subBtn')
-
-// "Show the dialog" button opens the dialog modally
-addBtn.addEventListener("click", () => {
-dialog.showModal();
+  // Reload the page to its default settings
+  resetPage();
 });
 
-// "Close" button closes the dialog
-closeButton.addEventListener("click", () => {
-  dialog.close();
-});
+// Function to reset the page to its default settings
+function resetPage() {
 
-subBtn.addEventListener("click",() => {
-
-  // Get user input
-  const title = document.getElementById("title").value;
-  const author = document.getElementById("author").value;
-  const pages = document.getElementById('Pages').value;
-
-  // Create a new book object
-  const newBook = new Book(title, author, pages);
-
-  // Add the new book to the library array
-  myLibrary.push(newBook);
-
-  //to display the new book
-  displayNewBook(newBook);
-
-  // Reset the form by setting input values to an empty string
-    document.getElementById("title").value = "";
-    document.getElementById("author").value = "";
-    document.getElementById('Pages').value = "";
-
-  // Close the dialog
-  dialog.close();
-});
+  // Reload the page
+  location.reload();
+}
 
 
 const displayNewBook = (newBook) =>{
@@ -71,4 +46,69 @@ const displayNewBook = (newBook) =>{
   bPages.textContent = newBook.pages;
 
   document.getElementById("wrap").appendChild(copyElement);
+
  }
+
+// Retrieve data from localStorage when the page loads
+if (localStorage.getItem('myLibrary')) {
+  myLibrary = JSON.parse(localStorage.getItem('myLibrary'));
+  // Display books from localStorage
+  myLibrary.forEach(displayNewBook);
+}
+
+
+//get reference to the element and dialog
+const form = document.getElementById('myform')
+const dialog = document.querySelector("dialog");
+const showButton = document.querySelector("#show-login");
+const closeButton = document.querySelector(".close-btn");
+const subBtn = document.getElementById('subBtn')
+
+// "Show the dialog" button opens the dialog modally
+addBtn.addEventListener("click", () => {
+dialog.showModal();
+});
+
+
+// "Close" button closes the dialog
+closeButton.addEventListener("click", () => {
+  dialog.close();
+});
+
+subBtn.addEventListener("click",() => {
+
+  // Get user input
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById('Pages').value;
+
+  // Create a new book object
+  const newBook = new Book(title, author, pages);
+
+  // Add the new book to the library array
+  myLibrary.push(newBook);
+
+  // Store the updated library array in localStorage
+  localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
+
+  //to display the new book
+  displayNewBook(newBook);
+
+  // Reset the form by setting input values to an empty string
+    document.getElementById("title").value = "";
+    document.getElementById("author").value = "";
+    document.getElementById('Pages').value = "";
+
+    reloadPage(); // Call the function to reload the page
+
+  // Close the dialog
+  dialog.close();
+});
+
+function reloadPage() {
+  location.reload();
+}
+
+
+
+

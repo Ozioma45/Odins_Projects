@@ -1,3 +1,6 @@
+//HANDLES THE SWIPER
+
+
 /* var swiper = new Swiper(".slide-content", {
   loop: true, // Enable loop
   // Other Swiper options
