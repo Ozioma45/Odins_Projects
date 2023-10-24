@@ -360,7 +360,9 @@ form {
     color: #000000;
   }
 
-
+.hide{
+  display: none;
+}
 
   /*for the read and delete button*/
   

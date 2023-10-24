@@ -35,6 +35,9 @@ const displayNewBook = (newBook, index) =>{
   //all of its child elements and their contents. It effectively duplicates the entire structure and content within 
  const copyElement = target.cloneNode(true);
 
+ 
+ copyElement.classList.remove("hide")
+
  // Access the "Delete" button within the cloned div
  const deleteButton = copyElement.querySelector(".delete-button");
 

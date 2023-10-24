@@ -34,7 +34,7 @@
 var swiper = new Swiper(".slide-content", {
   slidesPerView: 'auto',
   centeredSlides: false,
-  loop: true, // Enable looping
+  loop: false, // Enable looping
   slidesPerGroupSkip: 1,
   grabCursor: true,
   keyboard: {
