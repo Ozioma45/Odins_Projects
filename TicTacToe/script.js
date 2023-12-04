@@ -1,3 +1,7 @@
+//This file handles the main logic and functionality of the game
+const mainGame = document.querySelector('#main-Game')
+const introDiv = document.querySelector('#intro-div')
+
 // displayController - Manages the display of messages on the page.
 const displayController = (() => {
     // Function to render a message on the page.
@@ -170,11 +174,19 @@ function checkForTie(board) {
 // Event listener for the restart button to restart the game.
 const restartButton = document.querySelector("#restart-button");
 restartButton.addEventListener("click", () => {
+    introDiv.classList.remove('d-none')
+    mainGame.classList.add('d-none')
+
     Game.restart();
 });
 
 // Event listener for the start button to start the game.
 const startButton = document.querySelector("#start-button");
+
+
 startButton.addEventListener("click", () => {
-    Game.start();
-});
+    introDiv.classList.add('d-none')
+    mainGame.classList.remove('d-none')
+    
+    Game.start()
+})
