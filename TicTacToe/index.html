@@ -52,23 +52,23 @@
         <div>
         <div id="message"></div></div>
 
-        <div class="game-header d-flex w-100 h-100x justify-content-evenly">
+        <div class="game-header d-flex w-100 h-100x justify-content-evenly mb-3">
             <button id="restart-button" class="game-button">Restart Game</button>
             <button id="End-button" class="game-button">End Game</button>
         </div>
 
-        <div class="scores d-flex justify-content-evenly align-items-center bg-primary w-50">
-            <div id="player1Score">
-                <p>Player 1</p>
-                <p class="p1Score"></p>
+        <div class="scores row justify-content-evenly">
+            <div id="player1Score" class="col-md-3">
+                <span>PlayerOne</span>
+                <div class="p1Score">0</div>
             </div>
-            <div id="TieScore">
-                <p>Tie</p>
-                <p class="TScore"></p>
+            <div id="TieScore" class="col-md-3 mx-md-2">
+                <span>Tie</span>
+                <div class="TScore">0</div>
             </div>
-            <div id="Player2Score">
-                <p>Player 2</p>
-                <p class="p2Score"></p>
+            <div id="player2Score" class="col-md-3">
+                <span>PlayerTwo</span>
+                <div class="p2Score">0</div>
             </div>
         </div>
     </div>

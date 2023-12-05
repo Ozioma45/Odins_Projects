@@ -83,6 +83,9 @@ input{
     width: 8em;
     border: rgba(255, 255, 255, 0.233) solid 2px;
     box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.63);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -116,3 +119,21 @@ h1{
     border: none;
 }
 
+#player1Score{
+    background-color:#85dce3;
+    
+}
+
+#player2Score{
+    background-color:#e07b00;
+}
+
+#TieScore{
+    background-color: #999999;
+}
+
+#player1Score, #player2Score, #TieScore{
+    text-align: center;
+    width: 7em;
+    border-radius: 10px;
+}
