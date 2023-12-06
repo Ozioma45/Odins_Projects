@@ -1,4 +1,4 @@
-//HANDLES THE GENERAL WORKFLOW
+/* //HANDLES THE GENERAL WORKFLOW
 
 const addBtn = document.getElementById('addBtn');
 
@@ -141,7 +141,4 @@ subBtn.addEventListener("click",() => {
 function reloadPage() {
   location.reload();
 }
-
-
-
-
+ */
