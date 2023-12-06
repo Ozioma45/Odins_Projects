@@ -1,14 +1,15 @@
-/* //HANDLES THE GENERAL WORKFLOW
+//const addBtn = document.getElementById('addBtn');
 
-const addBtn = document.getElementById('addBtn');
-
- let myLibrary = [];
-
- function Book(title, author, pages)  {
-  this.title = title;
-   this.author = author;
-   this.pages = pages;
+class Book {
+  constructor(title, author, pages) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+  }
 }
+
+let myLibrary = [];
+
 
 // Add an event listener to the "Reset" button
 document.getElementById("resetButton").addEventListener("click", function () {
@@ -141,4 +142,9 @@ subBtn.addEventListener("click",() => {
 function reloadPage() {
   location.reload();
 }
- */
+
+
+
+
+ 
+
