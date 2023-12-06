@@ -426,6 +426,7 @@ startButton.addEventListener("click", () => {
  
  const mainGame = document.querySelector('#main-Game')
  const introDiv = document.querySelector('#intro-div')
+ const dialog = document.querySelector("dialog");
  
  // displayController - Manages the display of messages on the page.
  const displayController = (() => {
@@ -503,13 +504,20 @@ startButton.addEventListener("click", () => {
              createPlayer(document.querySelector("#player1").value, "X"),
              createPlayer(document.querySelector("#player2").value, "O"),
          ];
+
          currentPlayerIndex = 0;
 
          const player1Name = document.querySelector('#player1Name');
          const player2Name = document.querySelector('#player2Name');
+         player1Value = document.querySelector("#player1").value;
+         player2Value = document.querySelector("#player2").value;
+
+        player1Value = player1Value !== "" ? player1Value : "No Name";
+        player2Value = player2Value !== "" ? player2Value : "No Name";
+
          
-         player1Name.innerHTML = document.querySelector("#player1").value;
-         player2Name.innerHTML = document.querySelector("#player2").value;
+         player1Name.innerHTML = player1Value;
+         player2Name.innerHTML = player2Value;
 
 
          gameOver = false;
@@ -545,11 +553,19 @@ startButton.addEventListener("click", () => {
              
             //CHECK THIS WELL AND UNDERSTAND
 
+            const winnerMg = document.querySelector('#winnerMg')
+
              // Check if any player has reached the score of 3
         if (player1Score === 3 || player2Score === 3) {
             displayController.renderMessage(
                 `${players[currentPlayerIndex].name} wins the game!`
             );
+
+            winnerMg.innerText = `${players[currentPlayerIndex].name} wins the game!`
+
+            //show modal
+            dialog.showModal();
+
             // End the game
             gameOver = true;
         } else {
@@ -603,6 +619,9 @@ startButton.addEventListener("click", () => {
  
          // Clear any previous messages.
          document.querySelector("#message").innerHTML = "";
+
+         //Game starts from the first player
+         currentPlayerIndex = 0;
  
          // Reset the game over flag.
          gameOver = false;
@@ -672,23 +691,29 @@ startButton.addEventListener("click", () => {
  })
 
  // Event listener for the reset button to reset the entire game.
-const resetGameButton = document.querySelector("#reset-game-button");
-resetGameButton.addEventListener("click", () => {
-    introDiv.classList.remove('d-none')
-    mainGame.classList.add('d-none')
+ const resetGameButtons = document.querySelectorAll(".reset-game-button");
 
-    // Reset all scores, round counters, and other game state variables.
-    player1Score = 0;
-    player2Score = 0;
-    tiesScore = 0;
-    currentRound = 1;
-
-    // Update the score display
-    //Game.updateScoreDisplay();
-
-    //to reload the page
-    location.reload();
-
-    // Reset the game state
-    //Game.restart();
-});
+ resetGameButtons.forEach(button => {
+     button.addEventListener("click", () => {
+         // Your reset logic here
+         introDiv.classList.remove('d-none');
+         mainGame.classList.add('d-none');
+         dialog.close();
+ 
+         // Reset all scores, round counters, and other game state variables.
+         player1Score = 0;
+         player2Score = 0;
+         tiesScore = 0;
+         currentRound = 1;
+ 
+         // Update the score display
+         // Game.updateScoreDisplay();
+ 
+         // Reload the page
+         location.reload();
+ 
+         // Reset the game state
+         // Game.restart();
+     });
+ });
+ 
