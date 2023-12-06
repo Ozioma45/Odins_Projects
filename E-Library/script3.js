@@ -1,3 +1,5 @@
+/* 
+//using constructors
 //HANDLES THE GENERAL WORKFLOW
 
 const addBtn = document.getElementById('addBtn');
@@ -142,6 +144,105 @@ function reloadPage() {
   location.reload();
 }
 
+
+
+
+ */
+
+//using Class
+//HANDLES THE GENERAL WORKFLOW
+
+const addBtn = document.getElementById('addBtn');
+
+class Book {
+  constructor(title, author, pages) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+  }
+}
+
+class Library {
+  constructor() {
+    this.books = [];
+    this.target = document.getElementById("main-card");
+    this.initialize();
+    this.setupEventListeners();
+  }
+
+  initialize() {
+    // Retrieve data from localStorage when the page loads
+    if (localStorage.getItem('myLibrary')) {
+      this.books = JSON.parse(localStorage.getItem('myLibrary'));
+      // Display books from localStorage
+      this.books.forEach((book, index) => this.displayNewBook(book, index));
+    }
+  }
+
+  displayNewBook(newBook, index) {
+    const copyElement = this.target.cloneNode(true);
+    copyElement.classList.remove("hide");
+
+    // ... (rest of the existing displayNewBook logic)
+
+    document.getElementById("wrap").appendChild(copyElement);
+  }
+
+  resetPage() {
+    // Reload the page
+    location.reload();
+  }
+
+  reloadPage() {
+    this.resetPage();
+  }
+
+  setupEventListeners() {
+    // Add an event listener to the "Reset" button
+    document.getElementById("resetButton").addEventListener("click", () => {
+      // Remove the "myLibrary" item from local storage
+      localStorage.removeItem("myLibrary");
+      // Reload the page to its default settings
+      this.resetPage();
+    });
+
+    // ... (rest of the existing event listeners)
+
+    addBtn.addEventListener("click", () => {
+      dialog.showModal();
+    });
+
+    closeButton.addEventListener("click", () => {
+      dialog.close();
+    });
+
+    subBtn.addEventListener("click", () => {
+      this.handleSubmission();
+    });
+  }
+
+  handleSubmission() {
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const pages = document.getElementById('Pages').value;
+
+    const newBook = new Book(title, author, pages);
+    this.books.push(newBook);
+
+    localStorage.setItem('myLibrary', JSON.stringify(this.books));
+    this.displayNewBook(newBook);
+
+    document.getElementById("title").value = "";
+    document.getElementById("author").value = "";
+    document.getElementById('Pages').value = "";
+
+    this.reloadPage();
+    dialog.close();
+  }
+}
+
+// Instantiate the Library class
+const myLibrary = new Library();
 
 
 
