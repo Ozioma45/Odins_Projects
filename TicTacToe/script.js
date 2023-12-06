@@ -504,6 +504,14 @@ startButton.addEventListener("click", () => {
              createPlayer(document.querySelector("#player2").value, "O"),
          ];
          currentPlayerIndex = 0;
+
+         const player1Name = document.querySelector('#player1Name');
+         const player2Name = document.querySelector('#player2Name');
+         
+         player1Name.innerHTML = document.querySelector("#player1").value;
+         player2Name.innerHTML = document.querySelector("#player2").value;
+
+
          gameOver = false;
          Gameboard.render();
      };
@@ -598,7 +606,7 @@ startButton.addEventListener("click", () => {
  
          // Reset the game over flag.
          gameOver = false;
- 
+
          // Update the score display
          updateScoreDisplay();
  
@@ -609,6 +617,7 @@ startButton.addEventListener("click", () => {
          start,
          handleClick,
          restart,
+         updateScoreDisplay,
      };
  })();
  
@@ -661,3 +670,25 @@ startButton.addEventListener("click", () => {
      
      Game.start()
  })
+
+ // Event listener for the reset button to reset the entire game.
+const resetGameButton = document.querySelector("#reset-game-button");
+resetGameButton.addEventListener("click", () => {
+    introDiv.classList.remove('d-none')
+    mainGame.classList.add('d-none')
+
+    // Reset all scores, round counters, and other game state variables.
+    player1Score = 0;
+    player2Score = 0;
+    tiesScore = 0;
+    currentRound = 1;
+
+    // Update the score display
+    //Game.updateScoreDisplay();
+
+    //to reload the page
+    location.reload();
+
+    // Reset the game state
+    //Game.restart();
+});
