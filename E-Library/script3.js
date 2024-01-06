@@ -41,21 +41,23 @@ class Book {
 let myLibrary = [];
 
 // Add an event listener to the "Reset" button
-document.getElementById("resetButton").addEventListener("click", function () {
-  // Remove the "myLibrary" item from local storage
-  localStorage.removeItem("myLibrary");
+document.querySelectorAll(".resetButton").forEach(function (button) {
+  button.addEventListener("click", function () {
+    // Remove the "myLibrary" item from local storage
+    localStorage.removeItem("myLibrary");
 
-  // Clear user-related values from local storage
-  clearLocalStorageUserValues();
+    // Clear user-related values from local storage
+    clearLocalStorageUserValues();
 
-  const mainSec = document.getElementById("main");
-  const userName = document.getElementById("userName");
+    const mainSec = document.getElementById("main");
+    const userName = document.getElementById("userName");
 
-  mainSec.classList.add("d-none");
-  userName.classList.remove("d-none");
+    mainSec.classList.add("d-none");
+    userName.classList.remove("d-none");
 
-  // Reload the page to its default settings
-  resetPage();
+    // Reload the page to its default settings
+    resetPage();
+  });
 });
 
 // Function to clear user-related values from local storage
