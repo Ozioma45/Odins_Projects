@@ -37,6 +37,13 @@ button {
   border: none;
 }
 
+#userInput {
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #ffff;
+}
+
 #entLib {
   background-color: #800020;
   color: #fff;
