@@ -55,7 +55,7 @@
               type="text"
               id="title"
               placeholder="Title of the book"
-              name="title" />
+              name="title" required/>
           </div>
           <div class="form-element">
             <label for="author">Author</label>
@@ -63,7 +63,7 @@
               type="text"
               id="author"
               placeholder="Name of the author"
-              name="author" />
+              name="author" required/>
           </div>
           <div class="form-element">
             <label for="Pages">Pages</label>
@@ -71,7 +71,7 @@
               type="number"
               id="Pages"
               name="Pages"
-              placeholder="Number of Pages" />
+              placeholder="Number of Pages" required/>
           </div>
           <div class="form-element">
             <button id="subBtn">Submit</button>
@@ -159,9 +159,9 @@
 
               <div class="card-content">
                 <div class="row">
-                  <div class="person d-flex">
+                  <div class="person d-flex flex-column flex-md-row mb-1 ">
                     <p>Author:</p>
-                    <p class="ps-3 Bvalues bAuthor">Bob Proctor</p>
+                    <p class="Bvalues bAuthor col-12 ms-md-2">Bob Proctor</p>
                   </div>
                   <div class="person d-flex">
                     <p>Pages:</p>
@@ -169,14 +169,15 @@
                   </div>
                 </div>
 
-                <div class="btn-conts d-flex justify-content-center">
+                <div class="btn-conts justify-content-center row">
                   <button
-                    class="read-btn button hide"
+                    class="read-btn button hide col-5"
                     style="background-color: blue">
                     Read
                   </button>
-                  <button class="nRead-btn button">Not Read</button>
-                  <button class="del-btn button">Delete</button>
+                  <button class="nRead-btn button col-5">Not Read</button>
+                  <button class="edit-btn button col-5">Edit</button>
+                  <button class="del-btn button col-5">Delete</button>
                 </div>
               </div>
             </div>

@@ -28,8 +28,6 @@ function enterLibr() {
   }
 }
 
-//const addBtn = document.getElementById('addBtn');
-
 class Book {
   constructor(title, author, pages) {
     this.title = title;
@@ -179,6 +177,12 @@ subBtn.addEventListener("click", () => {
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
   const pages = document.getElementById("Pages").value;
+
+  //check if all fields are filled
+  if (!title || !author || !pages) {
+    alert("Please fill in all fields");
+    return;
+  }
 
   // Create a new book object
   const newBook = new Book(title, author, pages);
